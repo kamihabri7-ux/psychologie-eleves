@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Les troubles dépressifs chez les élèves</title>
+
+<style>
+:root {
+    --primary: #315c81;
+    --secondary: #6397ad;
+    --light: #f2f7fb;
+    --dark: #243447;
+    --white: #ffffff;
+    --accent: #d8eaf2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    line-height: 1.8;
+}
+
+header {
+    background: rgba(255,255,255,0.97);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 7%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 15px #0000000c;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 14px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--secondary);
+}
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 8%;
+    background:
+        radial-gradient(circle at 15% 20%, #d5e8f1 0, transparent 35%),
+        radial-gradient(circle at 85% 80%, #c4dce9 0, transparent 35%),
+        linear-gradient(135deg, #f6faff, #e5f0f7);
+}
+
+.hero-content {
+    max-width: 850px;
+    animation: appear 1s ease;
+}
+
+.badge {
+    display: inline-block;
+    padding: 7px 17px;
+    border-radius: 30px;
+    background: #dcebf4;
+    color: var(--primary);
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 5vw, 57px);
+    color: var(--primary);
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    padding: 13px 25px;
+    border-radius: 8px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    transition: .3s;
+}
+
+.button:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+}
+
+section {
+    padding: 80px 8%;
+    scroll-margin-top: 80px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    color: var(--primary);
+    font-size: clamp(27px, 4vw, 36px);
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    max-width: 700px;
+    margin: auto;
+    color: #657585;
+}
+
+.intro {
+    max-width: 950px;
+    margin: auto;
+    font-size: 17px;
+}
+
+.intro p {
+    margin-bottom: 18px;
+}
+
+.highlight {
+    background: white;
+    border-left: 5px solid var(--secondary);
+    border-radius: 8px;
+    padding: 22px;
+    margin-top: 25px;
+    box-shadow: 0 4px 20px #00000008;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 5px 22px #193b500b;
+    transition: transform .3s, box-shadow .3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px #193b5017;
+}
+
+.card .icon {
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    color: var(--primary);
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+.soft-section {
+    background: #e8f1f7;
+}
+
+.steps {
+    max-width: 850px;
+    margin: auto;
+}
+
+.step {
+    background: white;
+    padding: 24px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.number {
+    min-width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    display: grid;
+    place-items: center;
+    font-weight: bold;
+}
+
+.step h3 {
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.project {
+    text-align: center;
+    background: linear-gradient(135deg, #294e70, #548ba3);
+    color: white;
+}
+
+.project h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.project p {
+    max-width: 750px;
+    margin: 10px auto;
+}
+
+.project .badge {
+    background: #ffffff24;
+    color: white;
+}
+
+.quiz-box {
+    max-width: 750px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px #0000000b;
+}
+
+.question {
+    margin-bottom: 25px;
+}
+
+.question h3 {
+    margin-bottom: 12px;
+    color: var(--primary);
+}
+
+.question label {
+    display: block;
+    background: #f3f7fa;
+    margin: 9px 0;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.question label:hover {
+    background: #e4eff6;
+}
+
+#quiz-result {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.resources {
+    max-width: 900px;
+    margin: auto;
+}
+
+.resources a {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+footer {
+    background: #1f3548;
+    color: white;
+    text-align: center;
+    padding: 35px 8%;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+.small {
+    font-size: 13px;
+    opacity: .8;
+    margin-top: 12px;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media(max-width: 650px) {
+    header {
+        padding: 15px 5%;
+    }
+
+    nav {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+
+    .step {
+        gap: 12px;
+        padding: 18px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Équilibre · Psychologie</div>
+
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#definition">Définition</a>
+        <a href="#causes">Causes</a>
+        <a href="#signes">Signes</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#quiz">Quiz</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="hero" id="accueil">
+    <div class="hero-content">
+        <span class="badge">Projet de psychologie</span>
+
+        <h1>Les troubles dépressifs chez les élèves</h1>
+
+        <p>
+            Comprendre la souffrance psychologique en milieu scolaire,
+            reconnaître les signes de détresse et favoriser un environnement
+            fondé sur l'écoute, la bienveillance et la prévention.
+        </p>
+
+        <a href="#definition" class="button">Découvrir le sujet →</a>
+    </div>
+</section>
+
+<section id="definition">
+    <div class="section-title reveal">
+        <h2>Comprendre la dépression</h2>
+        <p>Une approche éducative pour mieux comprendre la santé mentale des élèves.</p>
+    </div>
+
+    <div class="intro reveal">
+        <p>
+            La dépression est un trouble de santé mentale qui peut toucher
+            les enfants et les adolescents. Elle peut influencer leurs émotions,
+            leurs pensées, leur comportement, leurs relations sociales et leur
+            parcours scolaire.
+        </p>
+
+        <p>
+            Contrairement à une tristesse passagère, un épisode dépressif peut
+            durer et perturber de manière importante la vie quotidienne.
+            Il ne s'agit ni d'un manque de volonté ni d'une simple paresse.
+        </p>
+
+        <p>
+            Chaque élève est différent. Une baisse des résultats scolaires ou
+            un changement de comportement ne signifie pas nécessairement qu'il
+            souffre de dépression, mais mérite parfois une attention particulière.
+        </p>
+
+        <div class="highlight">
+            <strong>Objectif du projet :</strong>
+            sensibiliser les élèves, les familles et les enseignants aux troubles
+            dépressifs, à leurs conséquences possibles et à l'importance d'une
+            prise en charge adaptée.
+        </div>
+    </div>
+</section>
+
+<section class="soft-section" id="causes">
+    <div class="section-title reveal">
+        <h2>Les facteurs qui peuvent contribuer à la dépression</h2>
+        <p>Les difficultés peuvent être multiples et varier d'un élève à l'autre.</p>
+    </div>
+
+    <div class="cards">
+
+        <article class="card reveal">
+            <div class="icon">📚</div>
+            <h3>Pression scolaire</h3>
+            <p>
+                Le stress lié aux examens, la peur de l'échec, les attentes
+                élevées ou les difficultés d'apprentissage peuvent contribuer
+                à une détresse psychologique.
+            </p>
+        </article>
+
+        <article class="card reveal">
+            <div class="icon">🏠</div>
+            <h3>Difficultés familiales</h3>
+            <p>
+                Les conflits familiaux, les changements importants dans la vie
+                familiale ou le manque de soutien peuvent fragiliser le bien-être
+                émotionnel.
+            </p>
+        </article>
+
+        <article class="card reveal">
+            <div class="icon">👥</div>
+            <h3>Harcèlement et isolement</h3>
+            <p>
+                Les moqueries répétées, le rejet, les violences ou le sentiment
+                de solitude peuvent affecter profondément la santé mentale.
+            </p>
+        </article>
+
+        <article class="card reveal">
+            <div class="icon">🧠</div>
+            <h3>Facteurs personnels</h3>
+            <p>
+                Des facteurs biologiques, psychologiques, sociaux et des
+                antécédents personnels peuvent également intervenir.
+            </p>
+        </article>
+
+    </div>
+</section>
+
+<section id="signes">
+    <div class="section-title reveal">
+        <h2>Les signes à reconnaître</h2>
+        <p>Observer les changements durables sans juger ni poser soi-même un diagnostic.</p>
+    </div>
+
+    <div class="cards">
+
+        <article class="card reveal">
+            <div class="icon">😔</div>
+            <h3>Signes émotionnels</h3>
+            <p>
+                Tristesse persistante, irritabilité, sentiment de dévalorisation,
+                culpabilité ou perte d'intérêt pour les activités habituelles.
+            </p>
+        </article>
+
+        <article class="card reveal">
+            <div class="icon">📝</div>
+            <h3>Signes scolaires</h3>
+            <p>
+                Difficultés de concentration, baisse des résultats, absentéisme
+                ou manque d'énergie pour participer aux activités.
+            </p>
+        </article>
+
+        <article class="card reveal">
+            <div class="icon">🌙</div>
+            <h3>Signes physiques</h3>
+            <p>
+                Troubles du sommeil, changements de l'appétit, fatigue persistante
+                ou plaintes physiques récurrentes.
+            </p>
+        </article>
+
+        <article class="card reveal">
+            <div class="icon">🚪</div>
+            <h3>Signes relationnels</h3>
+            <p>
+                Retrait social, éloignement des amis, diminution des échanges
+                ou perte d'intérêt pour les loisirs.
+            </p>
+        </article>
+
+    </div>
+
+    <div class="highlight reveal">
+        <strong>Important :</strong>
+        ces signes ne permettent pas, à eux seuls, de diagnostiquer une dépression.
+        Lorsqu'ils persistent ou affectent la vie quotidienne, il est conseillé
+        de consulter un professionnel de santé.
+    </div>
+</section>
+
+<section class="soft-section" id="consequences">
+    <div class="section-title reveal">
+        <h2>Les conséquences possibles</h2>
+        <p>La souffrance psychologique peut affecter plusieurs aspects de la vie de l'élève.</p>
+    </div>
+
+    <div class="cards">
+
+        <article class="card reveal">
+            <h3>Sur les apprentissages</h3>
+            <p>
+                Des difficultés de concentration, de mémorisation et de motivation
+                peuvent rendre les apprentissages plus difficiles.
+            </p>
+        </article>
+
+        <article class="card reveal">
+            <h3>Sur les relations</h3>
+            <p>
+                L'élève peut éprouver des difficultés à communiquer, à maintenir
+                des amitiés ou à participer à la vie collective.
+            </p>
+        </article>
+
+        <article class="card reveal">
+            <h3>Sur le bien-être</h3>
+            <p>
+                Le sommeil, l'énergie, l'estime de soi et la capacité à apprécier
+                les activités quotidiennes peuvent être affectés.
+            </p>
+        </article>
+
+    </div>
+</section>
+
+<section id="solutions">
+    <div class="section-title reveal">
+        <h2>Prévention et accompagnement</h2>
+        <p>Chacun peut contribuer à créer un environnement scolaire plus bienveillant.</p>
+    </div>
+
+    <div class="steps">
+
+        <div class="step reveal">
+            <div class="number">1</div>
+            <div>
+                <h3>Écouter avec bienveillance</h3>
+                <p>
+                    Permettre à l'élève de parler librement, sans minimiser
+                    ses difficultés ni le culpabiliser.
+                </p>
+            </div>
+        </div>
+
+        <div class="step reveal">
+            <div class="number">2</div>
+            <div>
+                <h3>Favoriser un climat scolaire positif</h3>
+                <p>
+                    Prévenir le harcèlement, encourager l'entraide et faire
+                    respecter la dignité de chaque élève.
+                </p>
+            </div>
+        </div>
+
+        <div class="step reveal">
+            <div class="number">3</div>
+            <div>
+                <h3>Encourager le dialogue</h3>
+                <p>
+                    Faciliter les échanges entre l'élève, sa famille et les
+                    adultes de confiance de l'établissement.
+                </p>
+            </div>
+        </div>
+
+        <div class="step reveal">
+            <div class="number">4</div>
+            <div>
+                <h3>Consulter un professionnel</h3>
+                <p>
+                    Un psychologue ou un médecin peut évaluer les difficultés
+                    et proposer un accompagnement adapté à la situation.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="project" id="projet">
+    <span class="badge">Présentation académique</span>
+
+    <h2>Projet de psychologie</h2>
+
+    <p><strong>Thème :</strong> Les troubles dépressifs chez les élèves</p>
+
+    <p><strong>Réalisé chez Monsieur Aissat</strong></p>
+
+    <p>
+        Ce projet vise à approfondir la compréhension des troubles dépressifs
+        en milieu scolaire, à sensibiliser à leurs signes et à promouvoir
+        l'écoute, la prévention et l'orientation vers des professionnels.
+    </p>
+</section>
+
+<section class="soft-section" id="quiz">
+    <div class="section-title reveal">
+        <h2>Quiz de sensibilisation</h2>
+        <p>Teste tes connaissances sur les troubles dépressifs chez les élèves.</p>
+    </div>
+
+    <div class="quiz-box reveal">
+        <form id="quiz-form">
+
+            <div class="question">
+                <h3>1. La dépression est-elle simplement un manque de volonté ?</h3>
+                <label><input type="radio" name="q1" value="a"> Oui, toujours.</label>
+                <label><input type="radio" name="q1" value="b"> Non, c'est un trouble de santé mentale.</label>
+                <label><input type="radio" name="q1" value="c"> Elle ne concerne jamais les élèves.</label>
+            </div>
+
+            <div class="question">
+                <h3>2. Que faire si un élève semble souffrir psychologiquement ?</h3>
+                <label><input type="radio" name="q2" value="a"> Se moquer de lui.</label>
+                <label><input type="radio" name="q2" value="b"> Ignorer tous les changements.</label>
+                <label><input type="radio" name="q2" value="c"> L'écouter et l'orienter vers une aide adaptée.</label>
+            </div>
+
+            <div class="question">
+                <h3>3. Qui peut aider un élève en difficulté ?</h3>
+                <label><input type="radio" name="q3" value="a"> Un adulte de confiance et un professionnel de santé.</label>
+                <label><input type="radio" name="q3" value="b"> Personne.</label>
+                <label><input type="radio" name="q3" value="c"> Uniquement ses camarades.</label>
+            </div>
+
+            <button class="button" type="submit">Voir mes résultats</button>
+        </form>
+
+        <div id="quiz-result" aria-live="polite"></div>
+    </div>
+</section>
+
+<section id="aide">
+    <div class="section-title reveal">
+        <h2>Un message d'espoir</h2>
+    </div>
+
+    <div class="intro reveal">
+        <p>
+            La souffrance psychologique ne doit jamais être une source de honte.
+            Chaque élève mérite d'être écouté, respecté et accompagné.
+            Demander de l'aide est une démarche courageuse.
+        </p>
+
+        <div class="highlight">
+            Si un élève évoque le suicide ou risque de se faire du mal,
+            prenez la situation au sérieux. Prévenez immédiatement un adulte
+            responsable et contactez les services d'urgence locaux si le danger
+            est immédiat.
+        </div>
+    </div>
+</section>
+
+<section id="sources">
+    <div class="section-title reveal">
+        <h2>Pour approfondir le sujet</h2>
+        <p>Quelques ressources de référence sur la santé mentale et la dépression.</p>
+    </div>
+
+    <div class="resources reveal">
+        <p>
+            • <a href="https://www.who.int/fr" target="_blank" rel="noopener noreferrer">
+            Organisation mondiale de la Santé (OMS)</a> :
+            informations générales sur la santé mentale.
+        </p>
+
+        <p>
+            • <a href="https://www.unicef.org/fr" target="_blank" rel="noopener noreferrer">
+            UNICEF</a> :
+            ressources sur le bien-être et la santé mentale des enfants et des adolescents.
+        </p>
+
+        <p>
+            Ces ressources complètent les informations éducatives présentées
+            sur ce site. Elles ne remplacent pas une évaluation professionnelle.
+        </p>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <p><strong>Équilibre — Psychologie et santé mentale</strong></p>
+    <p>Thème : Les troubles dépressifs chez les élèves</p>
+    <p>Réalisé chez Monsieur Aissat</p>
+    <p class="small">
+        Site éducatif de sensibilisation. Il ne constitue pas un outil
+        de diagnostic ni un service de soins.
+    </p>
+    <p class="small">© 2026 — Tous droits réservés.</p>
+</footer>
+
+<script>
+/* Animation des sections */
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach(element => {
+    observer.observe(element);
+});
+
+/* Quiz interactif */
+document.getElementById("quiz-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const answers = {
+        q1: "b",
+        q2: "c",
+        q3: "a"
+    };
+
+    let score = 0;
+    let unanswered = [];
+
+    for (const question in answers) {
+        const selected = document.querySelector(
+            'input[name="' + question + '"]:checked'
+        );
+
+        if (!selected) {
+            unanswered.push(question);
+        } else if (selected.value === answers[question]) {
+            score++;
+        }
+    }
+
+    const result = document.getElementById("quiz-result");
+
+    if (unanswered.length > 0) {
+        result.textContent =
+            "Réponds aux trois questions avant d
